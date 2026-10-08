@@ -170,7 +170,7 @@ Run `npm ci` and `npm test` to run regression tests in an isolated VS Code exten
 
 ## License
 
-This extension is licensed under the [MIT License](LICENSE).
+This extension is licensed under the [Apache License 2.0](LICENSE).
 
 ---
 
