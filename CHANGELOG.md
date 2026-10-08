@@ -10,6 +10,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Match schema associations with VS Code's glob matcher, including `**/pyproject.toml` and filename-only patterns. Read folder-scoped associations for the current document.
 - Document the raw JSON URL for uv's settings schema and distinguish `uv.toml` from `pyproject.toml`.
+- Allow schemas with unsupported format annotations such as Codex's and uv's `uint` to load for validation and completion. Continue validating supported formats and explicit schema constraints.
 
 ## [2026-03-08 15:50]
 
