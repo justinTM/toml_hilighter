@@ -1,8 +1,8 @@
 {
   "name": "toml-hilighter",
-  "displayName": "TOML Syntax Highlighting, Validation, Schema & Autocompletion",
+  "displayName": "TOML Syntax Highlighting, Validation, Schema & Autocompletion (schema fixes)",
   "description": "Comprehensive syntax highlighting, TOML v1.0.0 syntax validation, JSON Schema based validation, and schema-aware autocompletion for TOML files.",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "publisher": "ParisNeo",
   "engines": {
     "vscode": "^1.60.0"
@@ -10,7 +10,7 @@
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ParisNeo/toml_hilighter.git"
+    "url": "https://github.com/justinTM/toml_hilighter.git"
   },
   "categories": [
     "Programming Languages",
@@ -130,5 +130,18 @@
   },
   "devDependencies": {
     "@vscode/test-electron": "^3.1.0"
+  },
+  "license": "MIT",
+  "tomlHilighterFork": {
+    "source": "https://github.com/justinTM/toml_hilighter/tree/fix/combined-schema-support",
+    "upstreamVersion": "0.4.2",
+    "upstreamIssues": [
+      8,
+      9
+    ],
+    "upstreamPullRequests": [
+      10,
+      11
+    ]
   }
 }

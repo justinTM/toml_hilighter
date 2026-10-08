@@ -520,6 +520,7 @@ function activate(context) {
         outputChannel = vscode.window.createOutputChannel("TOML Schemas");
         context.subscriptions.push(outputChannel);
         logToChannel('TOML extension with schema validation & completion is now active!');
+        logToChannel('Schema fixes build 0.4.3: glob associations and unknown-format compatibility (issues #8 and #9).');
 
         // Unknown format annotations must not prevent the whole schema from loading.
         // Keep known formats enabled through ajv-formats below.
