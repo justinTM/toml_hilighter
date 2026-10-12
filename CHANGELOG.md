@@ -6,11 +6,19 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [0.4.3+justinTM.1] - 2026-10-12
+
 ### Fixed
 
 - Match schema associations with VS Code's glob matcher, including `**/pyproject.toml` and filename-only patterns. Read folder-scoped associations for the current document.
 - Document the raw JSON URL for uv's settings schema and distinguish `uv.toml` from `pyproject.toml`.
 - Allow schemas with unsupported format annotations such as Codex's and uv's `uint` to load for validation and completion. Continue validating supported formats and explicit schema constraints.
+
+### Release
+
+- Combine upstream PRs #10 and #11 in the justinTM fork. Keep the extension version at 0.4.3 and identify this fork release with SemVer build metadata.
+- Package with a pinned VSCE tool and a portable Node.js script. Keep release tooling and test evidence out of the installable VSIX.
+- Provide the VSIX, source ZIP/tarball, and SHA-256 checksums through GitHub Releases.
 
 ## [2026-03-08 15:50]
 

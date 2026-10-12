@@ -7,3 +7,10 @@ test/**
 .gitignore
 vsc-extension-quickstart.md
 # node_modules/**  <-- Make sure this line is REMOVED or COMMENTED OUT
+
+# Release tooling and proof assets are available in the source archives.
+scripts/**
+docs/**
+builds/**
+.github/**
+package-lock.json

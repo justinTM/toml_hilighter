@@ -1,5 +1,14 @@
 # TOML Highlighting, Validation, Schema & Autocompletion for VS Code
 
+## justinTM fork release
+
+[Download v0.4.3+justinTM.1](https://github.com/justinTM/toml_hilighter/releases/tag/v0.4.3%2BjustinTM.1) for the combined schema association and unknown-format fixes from upstream [PR #10](https://github.com/ParisNeo/toml_hilighter/pull/10) and [PR #11](https://github.com/ParisNeo/toml_hilighter/pull/11).
+
+Install the release VSIX using **Extensions → Install from VSIX…** locally and in the Remote-SSH extension view, or `code --install-extension <downloaded.vsix> --force`. It retains the `parisneo.toml-hilighter` identifier and replaces the official extension. The extension version is **0.4.3**; `+justinTM.1` identifies the GitHub fork release. To keep using this build until upstream releases the fixes, disable Auto Update for this extension, then install the upstream release and re-enable it when ready.
+
+The release provides source archives and SHA-256 checksums. [Build and verify the release](docs/RELEASING.md); [October 8 installation proof](docs/testing/2026-10-08-schema-fixes/README.md).
+
+
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/ParisNeo.toml-hilighter?style=flat-square&label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=ParisNeo.toml-hilighter)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/ParisNeo.toml-hilighter?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=ParisNeo.toml-hilighter)
 [![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/ParisNeo.toml-hilighter?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=ParisNeo.toml-hilighter)
