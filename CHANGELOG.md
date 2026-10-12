@@ -4,6 +4,14 @@ All notable changes to the "toml-hilighter" extension will be documented in this
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [Unreleased]
+
+### Fixed
+
+- Match schema associations with VS Code's glob matcher, including `**/pyproject.toml` and filename-only patterns. Read folder-scoped associations for the current document.
+- Document the raw JSON URL for uv's settings schema and distinguish `uv.toml` from `pyproject.toml`.
+- Allow schemas with unsupported format annotations such as Codex's and uv's `uint` to load for validation and completion. Continue validating supported formats and explicit schema constraints.
+
 ## [2026-03-08 15:50]
 
 - build: add package script, ignore builds/, bump to v0.4.2, and relax AJV strict mode

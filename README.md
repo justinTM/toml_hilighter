@@ -81,12 +81,23 @@ You can associate a JSON schema with your TOML files in two ways:
     ```
     The key is a glob pattern that matches TOML file paths, and the value is the schema URI (local path relative to the workspace root, absolute path, or an HTTPS URL).
 
+    Patterns use VS Code's glob syntax (`*`, `**`, `?`, character classes, and brace alternatives). A filename-only pattern such as `pyproject.toml` matches at any directory depth, just like `**/pyproject.toml`. Use forward slashes for directory separators, including on Windows. Folder-specific associations use the document's workspace folder settings.
+
+    Schema URLs must return JSON rather than a GitHub file preview page. For `uv.toml`, use uv's settings schema:
+    ```json
+    "toml.schema.associations": {
+        "**/uv.toml": "https://raw.githubusercontent.com/astral-sh/uv/main/uv.schema.json"
+    }
+    ```
+    This schema describes top-level uv settings; `pyproject.toml` nests these settings under `[tool.uv]` and needs a schema for the whole pyproject document.
+
 ### Schema Validation & Autocompletion Notes
 
 *   Both schema validation and autocompletion require a successfully parsed TOML document (no syntax errors).
 *   **Validation Errors:** For the initial implementation, schema validation errors are typically placed on the line of the `# $schema` comment or the first line of the document. The diagnostic message will contain the `instancePath` (TOML path) and the error message from `ajv`.
 *   **Autocompletion Context:** The current autocompletion is an MVP. It primarily understands the current table context (e.g., keys within `[table.name]`) and simple key prefixes. More complex TOML structures for context detection (like inline tables or deeply nested keys defined non-sequentially) will be improved in future versions.
 *   The "TOML Schemas" output channel (`View > Output`, then select "TOML Schemas" from the dropdown) provides logs related to schema loading, validation, and completion activity.
+*   Unsupported schema format annotations (such as `uint` emitted by Rust schema generators) are ignored. Supported formats from `ajv-formats` remain validated, along with types, numeric bounds, required properties, and other JSON Schema constraints. An ignored format does not enforce any additional rules beyond those explicit constraints.
 
 ## Configuration
 
@@ -155,9 +166,11 @@ These dependencies are bundled with the extension.
 
 Contributions, issues, and feature requests are welcome! Please check the [repository issues](https://github.com/ParisNeo/toml_hilighter/issues) page.
 
+Run `npm ci` and `npm test` to run regression tests in an isolated VS Code extension host. The runner downloads VS Code Stable by default. Set `VSCODE_EXECUTABLE_PATH` to use an existing VS Code executable instead. Test settings, extensions, and workspace files are created in a temporary directory, separate from your normal VS Code profile. Set `TOML_TEST_LIVE_SCHEMAS=1` to also test the currently published Codex and uv schemas; those checks require network access.
+
 ## License
 
-This extension is licensed under the [MIT License](LICENSE).
+This extension is licensed under the [Apache License 2.0](LICENSE).
 
 ---
 

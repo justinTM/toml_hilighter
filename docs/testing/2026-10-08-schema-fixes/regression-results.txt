@@ -1,0 +1,28 @@
+2026-10-08 combined-fix extension-host run: 25 PASS lines extracted from saved output.
+Temporary workspace paths replaced with <workspace>; other lines omitted.
+
+PASS: **/pyproject.toml against globstar/pyproject.toml (match)
+PASS: **/pyproject.toml against pyproject.toml (match)
+PASS: pyproject.toml against filename/nested/pyproject.toml (match)
+PASS: **/my-project/*.toml against scoped/my-project/config.toml (match)
+PASS: **/my-project/*.toml against scoped/my-project/nested/config.toml (no match)
+PASS: **/{pyproject,uv}.toml against braces/uv.toml (match)
+PASS: **/config?.toml against question/config1.toml (match)
+PASS: **/config[12].toml against class/config2.toml (match)
+PASS: **\windows\*.toml against windows/config.toml (match)
+PASS: **/pyproject.toml against negative/other.toml (no match)
+PASS: **/pyproject.toml against negative/pyproject.toml.bak.toml (no match)
+PASS: <workspace>/absolute/*.toml against absolute/config.toml (match)
+PASS: schema comment takes precedence
+PASS: folder-scoped associations
+PASS: unknown formats with minimum validation and completion
+PASS: unknown formats with type validation and completion
+PASS: unknown formats with reference validation and completion
+PASS: unknown formats with email validation and completion
+PASS: unknown formats with uri validation and completion
+PASS: unknown formats with int32 validation and completion
+PASS: unknown formats with required validation and completion
+PASS: unknown formats with additional validation and completion
+PASS: unknown formats with valid validation and completion
+PASS: live codex schema validation and completion
+PASS: live uv schema validation and completion
